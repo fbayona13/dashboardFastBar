@@ -6,7 +6,7 @@ export async function getAllUsers() {
         let query = await fetch(endpoint);
         let data = await query.json();
 
-        return data.users;
+        return data;
     } catch (error) {
         console.error(error);
         return [];
@@ -19,7 +19,7 @@ export async function getQuantityUsers() {
         let query = await fetch(endpoint);
         let data = await query.json();
 
-        return data.users.length;
+        return data.length;
     } catch (error) {
         console.error(error);
         return [];
