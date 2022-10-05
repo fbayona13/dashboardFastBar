@@ -6,7 +6,7 @@ export async function getAllProducts(page) {
         let query = await fetch(endpoint);
         let data = await query.json();
 
-        return data.products;
+        return data.data;
     } catch (error) {
         console.error(error);
         return [];
@@ -19,7 +19,7 @@ export async function getQuantityProduct() {
         let query = await fetch(endpoint);
         let data = await query.json();
 
-        return data.products.length;
+        return data.data.length;
     } catch (error) {
         console.error(error);
         return [];
@@ -32,7 +32,7 @@ export async function getQuantityCategories() {
         let query = await fetch(endpoint);
         let data = await query.json();
 
-        data.products.map((element) => element.category)
+        data.data.map((element) => element.category)
             .filter((element, index, array) => array.indexOf(element) === index)
             .map((category) => {
                 return Object({ category: category, count: category.length });
@@ -49,7 +49,7 @@ export async function getCategories() {
         let query = await fetch(endpoint);
         let data = await query.json();
 
-        return data.products.indexOf((element) => element.category);
+        return data.data.indexOf((element) => element.category);
     } catch (error) {
         console.error(error);
         return [];
@@ -62,7 +62,7 @@ export async function getOneProduct(id) {
         let query = await fetch(endpoint);
         let data = await query.json();
 
-        return data.products;
+        return data.data;
     } catch (error) {
         console.error(error);
         return [];

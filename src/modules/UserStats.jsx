@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useParams } from "react";
 import * as API from "../services/user.api";
 
 export function UserQuantity() {
     const [quantity, setQuantity] = useState([]);
     useEffect(() => {
         API.getQuantityUsers().then((data) => setQuantity(data));
-    });
+    }, []);
 
     return (
         <div>
@@ -18,13 +18,13 @@ export function UserQuantity() {
 export function LastUser() {
     const [user, setUser] = useState([]);
     useEffect(() => {
-        API.getLastUser().then((data) => setUser(data));
-    });
+        API.getAllUsers().then((data) => setUser(data.find((user) => user.id == data.length)));
+    }, []);
 
     return (
         <div>
             <h2>El ultimo usuario</h2>
-            {user}
+            {user ? user.name : null}
         </div>
     );
 }

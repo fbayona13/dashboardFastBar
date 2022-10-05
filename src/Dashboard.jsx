@@ -3,11 +3,12 @@ import Product from "./views/Product";
 import Error from "./views/Error";
 import Home from "./views/Home";
 import { Routes, Route, Link } from "react-router-dom";
+import './sass/dashboard.scss';
 
 function Dashboard() {
     return (
         <div>
-            <Link to="/">
+            <Link to="/" className="link">
                 <h1>Fast-Bar Dashboard</h1>
             </Link>
             <Routes>

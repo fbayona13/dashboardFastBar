@@ -1,0 +1,29 @@
+@import 'colors';
+
+div.div-pagina-principal {
+    width: 75vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: stretch;
+    gap: 1rem;
+    background-color: $color-2;
+    border-radius: 1rem;
+    margin: 1.5rem 10%;
+
+    div{
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+
+        a{
+            text-decoration: none;
+            color: $color-3;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+    }
+
+}

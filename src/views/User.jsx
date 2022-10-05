@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import * as API from "../services/user.api";
-import { UserQuantity, LastUser } from "./UserStats";
+import { UserQuantity, LastUser } from "../modules/UserStats";
+import '../sass/user.scss'
 
 export default function User() {
     const [list, setList] = useState([]);
@@ -9,17 +10,17 @@ export default function User() {
     });
 
     return (
-        <div>
-            <h2>Lista usuarios</h2>
-            {
-                list.map((user) => (
-                    <li key={user.id}>
-                        {user.name}
-                    </li>
-                ))
-            }
-            <UserQuantity />
-            <LastUser />
+        <div className="user-list">
+            <div>
+                <h2 className="h2-user-list">Lista usuarios</h2>
+                {list.map((user) => (
+                    <li key={user.id}>{user.name}</li>
+                ))}
+            </div>
+            <div>
+                <UserQuantity />
+                <LastUser />
+            </div>
         </div>
     );
 }

@@ -1,0 +1,12 @@
+@import 'colors';
+
+a.link{
+    h1 {
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: $color-3;
+        background-color: $color-4;
+        margin: 0;
+        padding: 2vh 3vw;
+    }
+}

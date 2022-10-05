@@ -1,0 +1,11 @@
+@import 'colors';
+
+*{
+    @import 'fonts';
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: $color-1;
+}
